@@ -3,7 +3,7 @@
 #include "Temporary.h"
 #include "Modules/ModuleManager.h"
 
-#define LOCTEXT_NAMESPACE "FTemporaryModule"
+IMPLEMENT_MODULE(FTemporaryModule, Temporary)
 
 void FTemporaryModule::StartupModule()
 {
@@ -15,6 +15,4 @@ void FTemporaryModule::ShutdownModule()
     UE_LOG(LogTemp, Warning, TEXT("Temporary plugin ShutdownModule"));
 }
 
-#undef LOCTEXT_NAMESPACE
 
-IMPLEMENT_MODULE(FTemporaryModule, Temporary)
