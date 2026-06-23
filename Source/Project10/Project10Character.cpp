@@ -10,6 +10,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Test/TestActor.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -52,6 +53,24 @@ AProject10Character::AProject10Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+}
+
+void AProject10Character::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Spawn 로직 작성
+	if (UWorld* World = GetWorld())
+	{
+		FVector SpawnLocation = GetActorLocation() + GetActorForwardVector() * 300.f;
+		FRotator SpawnRotation = FRotator::ZeroRotator;
+
+		World->SpawnActor<ATestActor>(
+			ATestActor::StaticClass(),
+			SpawnLocation,
+			SpawnRotation
+		);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -127,3 +146,4 @@ void AProject10Character::Look(const FInputActionValue& Value)
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
 }
+

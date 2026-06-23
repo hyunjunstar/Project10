@@ -9,5 +9,7 @@ public class Project10 : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
-	}
+		// Private 모듈에서 참조
+        PrivateDependencyModuleNames.AddRange(new string[] { "Test", });
+    }
 }

@@ -10,6 +10,12 @@ public class Project10Target : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_5;
-		ExtraModuleNames.Add("Project10");
-	}
+        //ExtraModuleNames.Add("Project10");
+        // Test 모듈 추가
+        ExtraModuleNames.AddRange(new string[]
+        {
+            "Project10",
+            "Test",
+        });
+    }
 }

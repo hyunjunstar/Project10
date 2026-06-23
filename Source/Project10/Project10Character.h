@@ -55,6 +55,9 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	// Sqawn 로직을 위한 BeginPlay 함수 생성
+	virtual void BeginPlay() override;
 			
 
 protected:
