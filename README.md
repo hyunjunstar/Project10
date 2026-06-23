@@ -146,7 +146,8 @@ IMPLEMENT_MODULE(FTemporaryModule, Temporary)
 
 ### Temporary.uplugin이 비어 있으면 안 됐다
 
-처음에 Temporary.uplugin 파일만 만들고 내용을 안 넣었더니 플러그인 정보가 제대로 안 잡혔다. uplugin에는 플러그인 이름, 모듈 이름, CanContainContent 같은 내용을 꼭 넣어야 했다.
+처음에 Temporary.uplugin 파일만 만들고 내용을 안 넣었더니 빌드가 되지 않았다. 
+uplugin에는 내용을 넣어야 빌드가 된다는걸 알게 되었다.
 
 ### 플러그인 이름을 맞춰야 했다
 
